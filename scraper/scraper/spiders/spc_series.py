@@ -37,6 +37,7 @@ class ScpSeriesSpider(scrapy.Spider):
         # Sections present everywhere
         containment_procedures = response.xpath('//strong[starts-with(text(), "Special Containment Procedures")]').\
             xpath('..//text()').getall()
+        # Will only get the first paragraph of that
 
         # Full text
         full_description = response.xpath('//div[@id="page-content"]//p//text()').getall()
@@ -48,6 +49,6 @@ class ScpSeriesSpider(scrapy.Spider):
             'scp_class': scp_class,
             'tags': tags,
             'containment_procedures': ' '.join(containment_procedures),
-            'full_description': ' '.join(full_description),
+            'full_description': full_description,
             'rating': rating
         }
