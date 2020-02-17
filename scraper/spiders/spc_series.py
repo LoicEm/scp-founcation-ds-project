@@ -19,7 +19,7 @@ class ScpSeriesSpider(scrapy.Spider):
             xpath('.//li'):
             name = ref.xpath('./text()').get()
             href = ref.xpath(".//@href").get()
-            number = href[5:]
+            number = int(href[5:])
             meta = {
                 'name': name,
                 'scp_number': number}
