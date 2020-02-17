@@ -1,0 +1,11 @@
+md5: 2c96c93a363dce2056b454cdc2470d9b
+cmd: scrapy crawl scp-series -o data/articles_full.json
+deps:
+- md5: 7ca31c568ca334c8bc00c8327d5487e0.dir
+  path: scraper
+outs:
+- md5: aab69ba050b54d7903d48d90fa2e54f4.dir
+  path: data
+  cache: true
+  metric: false
+  persist: false
